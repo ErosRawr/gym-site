@@ -6,7 +6,6 @@
   <title>Paolo Fitness</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<script src="script.js"></script>
 <body>
 
   <nav class="nav">
@@ -18,7 +17,7 @@
     </ul>
   </nav>
 
-  <section class="hero">
+  <section class="hero reveal">
     <div class="hero-content">
       <h1>Transform Your Body</h1>
       <p>High-intensity training. Sustainable results.</p>
@@ -26,7 +25,7 @@
     </div>
   </section>
 
-  <section class="features">
+  <section class="features reveal">
     <div class="card">
       <h3>Smart Training</h3>
       <p>Programs designed for real people with real schedules.</p>
@@ -41,5 +40,18 @@
     </div>
   </section>
 
+<div class="service-buttons reveal">
+  <button data-service="web">Web</button>
+  <button data-service="fitness">Fitness</button>
+  <button data-service="automation">Automation</button>
+</div>
+
+<div class="service-content reveal">
+  <div class="service web">Web Development</div>
+  <div class="service fitness">Online Coaching</div>
+  <div class="service automation">Automation Tools</div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
