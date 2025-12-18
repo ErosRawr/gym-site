@@ -38,3 +38,13 @@ const navLinks = document.getElementById("navLinks");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
+
+const buttons = document.querySelectorAll(".services-buttons button");
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    services.forEach(s => s.classList.remove("active"));
+
+    const target = btn.dataset.service;
+    document.querySelector(`.${target}`).classList.add("active");
+  });
+});
