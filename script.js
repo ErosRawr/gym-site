@@ -47,4 +47,7 @@ buttons.forEach(btn => {
     const target = btn.dataset.service;
     document.querySelector(`.${target}`).classList.add("active");
   });
+
+  
 });
+
