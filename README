@@ -1,18 +1,34 @@
-# Gym Website
+# All-Day Fitness — Commercial Gym Website
 
-Modern, mobile-first website for a commercial gym.
+A modern, mobile-first website built for a commercial gym.  
+Designed to showcase services, memberships, and facilities with a clean, professional UI and smooth interactions.
+
+## Live Demo
+https://erosrawr.github.io/gym-site/
 
 ## Features
-- Responsive layout
-- Smooth animations
-- Service filtering
-- Clean UI/UX
+- Fully responsive (mobile-first)
+- Auto-sliding services carousel with images
+- Membership tiers with clear feature breakdowns
+- Bold “Why Choose Us” section
+- Modern footer with social icons
+- Clean navigation with mobile menu
+- Smooth, non-intrusive animations
 
 ## Tech Stack
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3 (Flexbox & Grid)
+- Vanilla JavaScript
+
+## Design Goals
+- Commercial gym feel 
+- Professional, confident tone
+- Clean layout inspired by large fitness brands, while remaining original
+- Optimized for readability and usability on mobile devices
 
 ## Status
-Work in progress.
+Version 1 — complete and ready for customization or deployment.
 
+## Author
+Paolo Berumen  
+Computer Science student & frontend developer
