@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paolo Fitness - Modern Training Facility</title>
+  <title>All-Day Fitness - Modern Training Facility</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <nav class="nav">
-    <div class="logo">PaoloFit</div>
+    <div class="logo">All-Day Fitness</div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#why">Why Us</a></li>
-      <li><a href="#facilities">Facilities</a></li>
       <li><a href="#membership">Membership</a></li>
+      <li><a href="#facilities">Facilities</a></li>
     </ul>
     <button class="nav-cta" onclick="scrollToSection('membership')">Join Today</button>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -29,12 +29,14 @@
     <ul>
       <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
       <li><a href="#why" onclick="closeMobileMenu()">Why Us</a></li>
-      <li><a href="#facilities" onclick="closeMobileMenu()">Facilities</a></li>
       <li><a href="#membership" onclick="closeMobileMenu()">Membership</a></li>
+      <li><a href="#facilities" onclick="closeMobileMenu()">Facilities</a></li>
     </ul>
   </div>
 
   <section class="hero">
+    <img src="assets/images/Bakground Splash.jpg" alt="Modern gym interior" class="hero-bg">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Train Better. Feel Stronger.</h1>
       <p>A complete training facility built for real progress.</p>
@@ -56,20 +58,32 @@
       <div class="services-slider">
         <div class="slides" id="slides">
           <div class="slide active">
-            <h3>Strength Training</h3>
-            <p>Full range of free weights and machines. Maintained equipment that's available when you need it.</p>
+            <img src="assets/images/Strength Training.jpg" alt="Strength training area" loading="lazy">
+            <div class="slide-content">
+              <h3>Strength Training</h3>
+              <p>Full range of free weights and machines. Maintained equipment that's available when you need it.</p>
+            </div>
           </div>
           <div class="slide">
-            <h3>Cardio Equipment</h3>
-            <p>Treadmills, bikes, and rowers. Modern machines with minimal wait times.</p>
+            <img src="assets/images/Cardio.jpg" alt="Cardio equipment area" loading="lazy">
+            <div class="slide-content">
+              <h3>Cardio Equipment</h3>
+              <p>Treadmills, bikes, and rowers. Modern machines with minimal wait times.</p>
+            </div>
           </div>
           <div class="slide">
-            <h3>Functional Training</h3>
-            <p>Dedicated space for bodyweight work, mobility, and functional movement patterns.</p>
+            <img src="assets/images/Functional.jpg" alt="Functional training" loading="lazy">
+            <div class="slide-content">
+              <h3>Functional Training</h3>
+              <p>Dedicated space for bodyweight work, mobility, and functional movement patterns.</p>
+            </div>
           </div>
           <div class="slide">
-            <h3>Group Classes</h3>
-            <p>Scheduled sessions throughout the week. Structured workouts that fit your schedule.</p>
+            <img src="assets/images/Group Classes.jpg" alt="Group fitness class" loading="lazy">
+            <div class="slide-content">
+              <h3>Group Classes</h3>
+              <p>Scheduled sessions throughout the week. Structured workouts that fit your schedule.</p>
+            </div>
           </div>
         </div>
         <div class="dots" id="dots">
@@ -84,44 +98,27 @@
 
   <section class="why reveal" id="why">
     <div class="container">
+      <h2>Why Choose All-Day Fitness</h2>
       <div class="why-grid">
         <div class="why-card">
-          <h3>Open Hours</h3>
-          <p>6 AM to 10 PM daily. Train on a schedule that works.</p>
+          <div class="why-icon">🔓</div>
+          <h3>24/7 Access</h3>
         </div>
         <div class="why-card">
-          <h3>Maintained Equipment</h3>
-          <p>Regular service checks. Machines that work when you need them.</p>
+          <div class="why-icon">💪</div>
+          <h3>Modern Equipment</h3>
         </div>
         <div class="why-card">
-          <h3>Structured Programs</h3>
-          <p>Clear progression plans. Accountability built into the system.</p>
-        </div>
-        <div class="why-card">
+          <div class="why-icon">📄</div>
           <h3>No Long-Term Contracts</h3>
-          <p>Month-to-month membership. Cancel anytime without penalties.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="facilities reveal" id="facilities">
-    <div class="container">
-      <div class="facilities-grid">
-        <div class="facility-item">
-          <div class="facility-placeholder"></div>
-          <h3>Training Floor</h3>
-          <p>15,000 sq ft of organized training space.</p>
+        <div class="why-card">
+          <div class="why-icon">✨</div>
+          <h3>Clean, Spacious Facilities</h3>
         </div>
-        <div class="facility-item">
-          <div class="facility-placeholder"></div>
-          <h3>Locker Rooms</h3>
-          <p>Clean facilities with secure storage and showers.</p>
-        </div>
-        <div class="facility-item">
-          <div class="facility-placeholder"></div>
-          <h3>Dedicated Zones</h3>
-          <p>Separate areas for strength, cardio, and functional training.</p>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Certified Trainers On-Site</h3>
         </div>
       </div>
     </div>
@@ -129,9 +126,85 @@
 
   <section class="membership reveal" id="membership">
     <div class="container">
-      <h2>See Membership Options</h2>
-      <p>Month-to-month plans with no signup fees.</p>
-      <button class="btn-primary" onclick="handleCTA()">Visit Us Today</button>
+      <h2>Membership Options</h2>
+      <p class="membership-subtitle">Choose the plan that fits your goals</p>
+      <div class="membership-grid">
+        
+        <div class="membership-card">
+          <h3>Day Pass</h3>
+          <div class="price">
+            <span class="currency">$</span>
+            <span class="amount">10</span>
+          </div>
+          <ul class="features">
+            <li>✓ Cardio equipment</li>
+            <li>✓ Free weights</li>
+            <li>✓ Locker rooms</li>
+          </ul>
+          <button class="btn-secondary" onclick="handleCTA('Day Pass')">Get Started</button>
+        </div>
+
+        <div class="membership-card">
+          <h3>Week Pass</h3>
+          <div class="price">
+            <span class="currency">$</span>
+            <span class="amount">30</span>
+          </div>
+          <ul class="features">
+            <li>✓ Cardio + weights</li>
+            <li>✓ Group classes (yoga, spin, boxing)</li>
+            <li>✓ Locker rooms with showers</li>
+          </ul>
+          <button class="btn-secondary" onclick="handleCTA('Week Pass')">Get Started</button>
+        </div>
+
+        <div class="membership-card popular">
+          <div class="badge">Most Popular</div>
+          <h3>All-Access</h3>
+          <div class="price">
+            <span class="currency">$</span>
+            <span class="amount">55</span>
+            <span class="period">/mo</span>
+          </div>
+          <ul class="features">
+            <li>✓ Full gym access</li>
+            <li>✓ All group classes</li>
+            <li>✓ Sauna access</li>
+            <li>✓ Fountain drinks</li>
+            <li>✓ Monthly body scan</li>
+          </ul>
+          <button class="btn-primary" onclick="handleCTA('All-Access')">Get Started</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities reveal" id="facilities">
+    <div class="container">
+      <h2>Facilities</h2>
+      <div class="facilities-grid">
+        <div class="facility-item">
+          <img src="assets/images/Training Floor.jpg" alt="Training floor" loading="lazy">
+          <h3>Training Floor</h3>
+          <p>15,000 sq ft of organized training space.</p>
+        </div>
+        <div class="facility-item">
+          <img src="assets/images/Lockers.jpg" alt="Locker rooms" loading="lazy">
+          <h3>Locker Rooms</h3>
+          <p>Clean facilities with secure storage and showers.</p>
+        </div>
+        <div class="facility-item">
+          <img src="assets/images/Zones.jpg" alt="Dedicated training zones" loading="lazy">
+          <h3>Dedicated Zones</h3>
+          <p>Separate areas for strength, cardio, and functional training.</p>
+        </div>
+        <div class="facility-item">
+          <img src="assets/images/Sauna.jpg" alt="Sauna" loading="lazy">
+          <h3>Sauna</h3>
+          <p>Relax and recover after your workout.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -139,17 +212,26 @@
     <div class="container">
       <h2>Location</h2>
       <p>123 Main Street, Austin, TX 78701</p>
-      <p class="hours">Open 6 AM - 10 PM Daily</p>
+      <p class="hours">Open 24/7</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="social-icons">
-      <a href="#" aria-label="Instagram">📸</a>
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Instagram">
+        <img src="assets/icons/instagram.png" alt="Instagram">
+      </a>
+      <a href="#" aria-label="Facebook">
+        <img src="assets/icons/facebook.png" alt="Facebook">
+      </a>
+      <a href="#" aria-label="Twitter">
+        <img src="assets/icons/twitter.png" alt="Twitter">
+      </a>
+      <a href="#" aria-label="TikTok">
+        <img src="assets/icons/tiktok.png" alt="TikTok">
+      </a>
     </div>
-    <p class="copyright">© 2025 PaoloFit</p>
+    <p class="copyright">© 2025 All-Day Fitness</p>
   </footer>
 
   <script src="script.js"></script>
