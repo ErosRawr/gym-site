@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paolo Fitness</title>
+  <title>Paolo Fitness - Transform Your Body</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,79 +11,171 @@
   <nav class="nav">
     <div class="logo">PaoloFit</div>
     <ul>
-      <li>Programs</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li data-section="services" onclick="scrollToSection('services')">Programs</li>
+      <li data-section="about" onclick="scrollToSection('about')">About</li>
+      <li data-section="contact" onclick="scrollToSection('contact')">Contact</li>
     </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">☰</button>
   </nav>
 
-  <section class="hero reveal">
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Transform Your Body</h1>
-      <p>High-intensity training. Sustainable results.</p>
-      <button>Get Started</button>
+      <h1>Get Stronger. Feel Better.</h1>
+      <p>Custom training that fits your life.</p>
+      <button class="btn-primary" onclick="scrollToSection('contact')" aria-label="Start your free session">
+        Start Your Free Session
+      </button>
+      <p class="micro-copy">Free consult • No pressure • Cancel anytime</p>
     </div>
   </section>
 
+  <!-- Social Proof Section -->
+  <section class="stats reveal" id="about">
+    <div class="section-intro">
+      <p>Trusted by clients who get real results</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat">
+        <h2>500+</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat">
+        <h2>10+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat">
+        <h2>95%</h2>
+        <p>Client Retention</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits reveal">
+    <div class="section-intro">
+      <p>Why PaoloFit Works</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Convenient</h3>
+        <p>Train on your schedule, not ours</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3>Motivating</h3>
+        <p>Supportive environment that pushes you forward</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <h3>Results</h3>
+        <p>No gimmicks. No confusion. Just results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
   <section class="features reveal">
     <div class="card">
       <h3>Smart Training</h3>
       <p>Programs designed for real people with real schedules.</p>
+      <p><strong>No gimmicks, just results.</strong></p>
     </div>
     <div class="card">
       <h3>Nutrition Focus</h3>
       <p>Simple food rules you can actually follow.</p>
+      <p><strong>Sustainable eating habits that last.</strong></p>
     </div>
     <div class="card">
       <h3>Consistency</h3>
-      <p>Results come from showing up — we make that easier.</p>
+      <p>Results come from showing up.</p>
+      <p><strong>We make that easier with accountability.</strong></p>
+    </div>
+    <div class="card">
+      <h3>Community</h3>
+      <p>Join like-minded individuals on the same journey.</p>
+      <p><strong>Support that keeps you motivated.</strong></p>
     </div>
   </section>
 
-<div class="services-buttons reveal">
-  <button data-service="training">Training</button>
-  <button data-service="nutrition">Nutrition</button>
-  <button data-service="online">Online Coaching</button>
-</div>
+  <!-- Services Section -->
+  <div class="services-slider">
+      <div class="slides">
+      <div class="slide active">
+        <h3>Personal Training</h3>
+        <p>Structured programs built for real results.</p>
+      </div>
+      <div class="slide">
+        <h3>Nutrition Coaching</h3>
+        <p>Sustainable eating strategies that work long-term.</p>
+      </div>
+      <div class="slide">
+        <h3>Online Training</h3>
+        <p>Train anywhere with expert guidance.</p>
+      </div>
+      <div class="slide">
+        <h3>Group Classes</h3>
+        <p>High-energy sessions that keep you consistent.</p>
+      </div>
+    </div>
 
-<div class="service-content reveal">
-  <div class="service training active">Personal Training content</div>
-  <div class="service nutrition">Nutrition coaching content</div>
-  <div class="service online">Online coaching content</div>
-</div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+      
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <p>No services match your selection.</p>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial reveal">
+      <p>"Best investment in my health. Down 30lbs and stronger than ever. Paolo's approach is sustainable and actually works."</p>
+      <span>— Sarah M., Austin TX</span>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta reveal" id="contact">
+    <h2>Ready to Transform Your Body?</h2>
+    <p>Book a free consultation today and start your fitness journey.</p>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required aria-label="Your name" />
+      <input type="email" placeholder="Email" required aria-label="Your email address" />
+      <button type="submit" aria-label="Submit consultation request">Get Started</button>      
+    </form>
+    
+    <div class="trust-signals">
+      <span>✓ Trusted by 500+ clients</span>
+      <span>✓ Evidence-based training</span>
+      <span>✓ Cancel anytime</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-inner">
+    <h3>PaoloFit</h3>
+    <p>Stronger bodies. Better lives.</p>
+
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+    </div>
+
+    <span class="footer-copy">© 2025 PaoloFit</span>
+  </div>
+</footer>
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
-<button class="menu-toggle" id="menuToggle">
-  ☰
-</button>
-
-<nav class="nav-links" id="navLinks">
-  <a href="#services">Services</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section class="cta">
-  <h2>Ready to Transform Your Body?</h2>
-  <p>Book a free consultation today.</p>
-
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Email" required />
-    <button type="submit">Get Started</button>
-  </form>
-</section>
-
-<div class="service lifestyle">
-  <h3>Lifestyle Coaching</h3>
-  <p>Habits, sleep, and routines that support long-term results.</p>
-</div>
-
-<button data-service="lifestyle">Lifestyle</button>
-
-<div class="service training active">
-
 </html>
