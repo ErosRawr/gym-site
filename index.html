@@ -3,178 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paolo Fitness - Transform Your Body</title>
+  <title>Paolo Fitness - Modern Training Facility</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <nav class="nav">
     <div class="logo">PaoloFit</div>
-    <ul>
-      <li data-section="services" onclick="scrollToSection('services')">Programs</li>
-      <li data-section="about" onclick="scrollToSection('about')">About</li>
-      <li data-section="contact" onclick="scrollToSection('contact')">Contact</li>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#membership">Membership</a></li>
     </ul>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">☰</button>
+    <button class="nav-cta" onclick="scrollToSection('membership')">Join Today</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Get Stronger. Feel Better.</h1>
-      <p>Custom training that fits your life.</p>
-      <button class="btn-primary" onclick="scrollToSection('contact')" aria-label="Start your free session">
-        Start Your Free Session
-      </button>
-      <p class="micro-copy">Free consult • No pressure • Cancel anytime</p>
-    </div>
-  </section>
-
-  <!-- Social Proof Section -->
-  <section class="stats reveal" id="about">
-    <div class="section-intro">
-      <p>Trusted by clients who get real results</p>
-    </div>
-    <div class="stats-grid">
-      <div class="stat">
-        <h2>500+</h2>
-        <p>Happy Clients</p>
-      </div>
-      <div class="stat">
-        <h2>10+</h2>
-        <p>Years Experience</p>
-      </div>
-      <div class="stat">
-        <h2>95%</h2>
-        <p>Client Retention</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section class="benefits reveal">
-    <div class="section-intro">
-      <p>Why PaoloFit Works</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <h3>Convenient</h3>
-        <p>Train on your schedule, not ours</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🎯</div>
-        <h3>Motivating</h3>
-        <p>Supportive environment that pushes you forward</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📈</div>
-        <h3>Results</h3>
-        <p>No gimmicks. No confusion. Just results.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features reveal">
-    <div class="card">
-      <h3>Smart Training</h3>
-      <p>Programs designed for real people with real schedules.</p>
-      <p><strong>No gimmicks, just results.</strong></p>
-    </div>
-    <div class="card">
-      <h3>Nutrition Focus</h3>
-      <p>Simple food rules you can actually follow.</p>
-      <p><strong>Sustainable eating habits that last.</strong></p>
-    </div>
-    <div class="card">
-      <h3>Consistency</h3>
-      <p>Results come from showing up.</p>
-      <p><strong>We make that easier with accountability.</strong></p>
-    </div>
-    <div class="card">
-      <h3>Community</h3>
-      <p>Join like-minded individuals on the same journey.</p>
-      <p><strong>Support that keeps you motivated.</strong></p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <div class="services-slider">
-      <div class="slides">
-      <div class="slide active">
-        <h3>Personal Training</h3>
-        <p>Structured programs built for real results.</p>
-      </div>
-      <div class="slide">
-        <h3>Nutrition Coaching</h3>
-        <p>Sustainable eating strategies that work long-term.</p>
-      </div>
-      <div class="slide">
-        <h3>Online Training</h3>
-        <p>Train anywhere with expert guidance.</p>
-      </div>
-      <div class="slide">
-        <h3>Group Classes</h3>
-        <p>High-energy sessions that keep you consistent.</p>
-      </div>
-    </div>
-
-    <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+    <ul>
+      <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="#why" onclick="closeMobileMenu()">Why Us</a></li>
+      <li><a href="#facilities" onclick="closeMobileMenu()">Facilities</a></li>
+      <li><a href="#membership" onclick="closeMobileMenu()">Membership</a></li>
+    </ul>
   </div>
 
-      
-      <!-- Empty State -->
-      <div class="empty-state" id="emptyState">
-        <p>No services match your selection.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Train Better. Feel Stronger.</h1>
+      <p>A complete training facility built for real progress.</p>
+      <button class="btn-primary" onclick="scrollToSection('membership')">
+        Visit Us Today
+      </button>
+    </div>
+  </section>
+
+  <section class="value-prop reveal">
+    <div class="container">
+      <h2>Complete Training Environment</h2>
+      <p>Modern equipment. Open hours. Professional space designed for consistent training.</p>
+    </div>
+  </section>
+
+  <section class="services reveal" id="services">
+    <div class="container">
+      <div class="services-slider">
+        <div class="slides" id="slides">
+          <div class="slide active">
+            <h3>Strength Training</h3>
+            <p>Full range of free weights and machines. Maintained equipment that's available when you need it.</p>
+          </div>
+          <div class="slide">
+            <h3>Cardio Equipment</h3>
+            <p>Treadmills, bikes, and rowers. Modern machines with minimal wait times.</p>
+          </div>
+          <div class="slide">
+            <h3>Functional Training</h3>
+            <p>Dedicated space for bodyweight work, mobility, and functional movement patterns.</p>
+          </div>
+          <div class="slide">
+            <h3>Group Classes</h3>
+            <p>Scheduled sessions throughout the week. Structured workouts that fit your schedule.</p>
+          </div>
+        </div>
+        <div class="dots" id="dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Testimonial -->
-    <div class="testimonial reveal">
-      <p>"Best investment in my health. Down 30lbs and stronger than ever. Paolo's approach is sustainable and actually works."</p>
-      <span>— Sarah M., Austin TX</span>
+  <section class="why reveal" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Open Hours</h3>
+          <p>6 AM to 10 PM daily. Train on a schedule that works.</p>
+        </div>
+        <div class="why-card">
+          <h3>Maintained Equipment</h3>
+          <p>Regular service checks. Machines that work when you need them.</p>
+        </div>
+        <div class="why-card">
+          <h3>Structured Programs</h3>
+          <p>Clear progression plans. Accountability built into the system.</p>
+        </div>
+        <div class="why-card">
+          <h3>No Long-Term Contracts</h3>
+          <p>Month-to-month membership. Cancel anytime without penalties.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta reveal" id="contact">
-    <h2>Ready to Transform Your Body?</h2>
-    <p>Book a free consultation today and start your fitness journey.</p>
-    <form onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="Your Name" required aria-label="Your name" />
-      <input type="email" placeholder="Email" required aria-label="Your email address" />
-      <button type="submit" aria-label="Submit consultation request">Get Started</button>      
-    </form>
-    
-    <div class="trust-signals">
-      <span>✓ Trusted by 500+ clients</span>
-      <span>✓ Evidence-based training</span>
-      <span>✓ Cancel anytime</span>
+  <section class="facilities reveal" id="facilities">
+    <div class="container">
+      <div class="facilities-grid">
+        <div class="facility-item">
+          <div class="facility-placeholder"></div>
+          <h3>Training Floor</h3>
+          <p>15,000 sq ft of organized training space.</p>
+        </div>
+        <div class="facility-item">
+          <div class="facility-placeholder"></div>
+          <h3>Locker Rooms</h3>
+          <p>Clean facilities with secure storage and showers.</p>
+        </div>
+        <div class="facility-item">
+          <div class="facility-placeholder"></div>
+          <h3>Dedicated Zones</h3>
+          <p>Separate areas for strength, cardio, and functional training.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="membership reveal" id="membership">
+    <div class="container">
+      <h2>See Membership Options</h2>
+      <p>Month-to-month plans with no signup fees.</p>
+      <button class="btn-primary" onclick="handleCTA()">Visit Us Today</button>
+    </div>
+  </section>
+
+  <section class="location reveal">
+    <div class="container">
+      <h2>Location</h2>
+      <p>123 Main Street, Austin, TX 78701</p>
+      <p class="hours">Open 6 AM - 10 PM Daily</p>
+    </div>
+  </section>
+
   <footer class="footer">
-  <div class="footer-inner">
-    <h3>PaoloFit</h3>
-    <p>Stronger bodies. Better lives.</p>
-
     <div class="social-icons">
       <a href="#" aria-label="Instagram">📸</a>
-      <a href="#" aria-label="YouTube">▶️</a>
+      <a href="#" aria-label="Facebook">📘</a>
       <a href="#" aria-label="Twitter">🐦</a>
     </div>
-
-    <span class="footer-copy">© 2025 PaoloFit</span>
-  </div>
-</footer>
-
+    <p class="copyright">© 2025 PaoloFit</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
