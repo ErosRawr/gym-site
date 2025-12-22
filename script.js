@@ -161,16 +161,35 @@ sliderContainer.addEventListener('mouseleave', () => {
 // ============================================
 let touchStartX = 0;
 let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 const swipeThreshold = 50;
+let isDragging = false;
+
+// Only enable swiping on mobile
+const isMobile = () => window.innerWidth <= 768;
 
 sliderContainer.addEventListener('touchstart', (e) => {
+  if (!isMobile()) return;
+  
   touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+  isDragging = true;
   isUserInteracting = true;
   stopAutoAdvance();
 }, { passive: true });
 
-sliderContainer.addEventListener('touchend', (e) => {
+sliderContainer.addEventListener('touchmove', (e) => {
+  if (!isMobile() || !isDragging) return;
+  
   touchEndX = e.changedTouches[0].screenX;
+  touchEndY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+sliderContainer.addEventListener('touchend', (e) => {
+  if (!isMobile() || !isDragging) return;
+  
+  isDragging = false;
   handleSwipe();
   // Resume auto-advance after 3 seconds
   setTimeout(() => {
@@ -180,10 +199,12 @@ sliderContainer.addEventListener('touchend', (e) => {
 }, { passive: true });
 
 function handleSwipe() {
-  const diff = touchStartX - touchEndX;
+  const diffX = touchStartX - touchEndX;
+  const diffY = Math.abs(touchStartY - touchEndY);
   
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
+  // Only swipe if horizontal movement is greater than vertical (prevent interfering with scroll)
+  if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
+    if (diffX > 0) {
       // Swiped left - go to next slide
       nextSlide();
     } else {

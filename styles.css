@@ -220,9 +220,10 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 15, 18, 0.3); /* Light dark overlay for text readability */
+  background: linear-gradient(180deg, rgba(15, 15, 18, 0.7), rgba(15, 15, 18, 0.5));
   z-index: 1;
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -315,6 +316,18 @@ img {
   min-height: 500px;
   border-radius: 12px;
   background-color: var(--off-white);
+  touch-action: pan-y pinch-zoom;
+}
+
+@media (max-width: 768px) {
+  .slides {
+    touch-action: pan-x;
+    cursor: grab;
+  }
+  
+  .slides:active {
+    cursor: grabbing;
+  }
 }
 
 .slide {
